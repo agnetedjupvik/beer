@@ -13,6 +13,10 @@ mongoose.connect('mongodb://localhost:27017/beer-app');
 //Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+routes.use((req, res, next) => {
+  console.log('Loggeloggelogge'); //officially the world's most useful middleware
+  next();
+})
 
 //Routes
 app.use('/api', routes);
