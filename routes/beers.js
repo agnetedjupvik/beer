@@ -60,5 +60,12 @@ router.route('/:id')
     })
   })
 
+  .delete((req, res, next) => {
+    Beer.findByIdAndRemove(req.params.id, (err, beer) => {
+      if (err) res.status(500).send(err);
+      res.json(beer);
+    })
+  })
+
 
 module.exports = router;
