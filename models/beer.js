@@ -6,3 +6,5 @@ const BeerSchema = new mongoose.Schema({
   size:       Number,
   alcoholic:  Boolean,
 });
+
+module.exports = mongoose.model('Beer', BeerSchema);
